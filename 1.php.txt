@@ -1,10 +1,24 @@
+<html>
+	<head>
+	
+		<title>Полиција Републике Српске</title>
+		
 		<?php
 include "connect.php";
 $upit='SELECT * FROM vijesti';
 $result= mysqli_query($conn,$upit);
 if (mysqli_num_rows($result)>0){
 while ($row=mysqli_fetch_array($result)){
-	if ($row['id']==2){?>
+	if ($row['id']==1){?>
+		
+		
+		<meta charset="utf-8" />
+		<meta property="og:title" content="<?php echo $row['tekst'];?>"/>
+		<meta property="og:url" content="http://www.muprs.org/1.php" />
+		<meta property="og:image" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="shortcut icon" href="images/icon.ico">
   
   .
   .
@@ -13,7 +27,59 @@ while ($row=mysqli_fetch_array($result)){
   .
   .
   .
-  						<?php echo $row['sadrzaj'];?>
+  .
+  .
+  .
+  .
+  .
+  
+  .
+  .
+  .
+  
+  .
+  .
+  .
+  .
+  .
+  
+  .
+  .
+						<header class="align-center">
+							<h1><?php echo $row['tekst'];?></h1>
+							<p><?php echo $row['datum'];?></p>
+						</header>
+
+						
+						<hr class="major" />
+						
+						<center><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['slike']); ?>" width="500" /> </center>
+<br>
+						<?php echo $row['sadrzaj'];?><br><br>
+						
+						
+						<center><?php echo $row['youtube'];?></center><br>
+						
+	<?php if (!$row['slika1']==0){?><center><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['slika1']); ?>"/> </center><br> <?php } ?>
+				
+	<?php if (!$row['slika2']==0){?><center><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['slika2']); ?>"/> </center><br> <?php } ?>		
+	
+	<?php if (!$row['slika3']==0){?><center><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['slika3']); ?>"/> </center><br> <?php } ?>		
+						
+			
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 						
 						<?php
 	}}}
