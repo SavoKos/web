@@ -1,0 +1,23 @@
+		<?php
+include "connect.php";
+$upit='SELECT * FROM vijesti';
+$result= mysqli_query($conn,$upit);
+if (mysqli_num_rows($result)>0){
+while ($row=mysqli_fetch_array($result)){
+	if ($row['id']==2){?>
+  
+  .
+  .
+  .
+  .
+  .
+  .
+  .
+  						<?php echo $row['sadrzaj'];?>
+						
+						<?php
+	}}}
+	else{
+	echo ("Ne postoje podaci u bazi");
+	}
+?>
