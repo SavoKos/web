@@ -1,0 +1,51 @@
+<?php
+include "connect.php";
+$upit='SELECT * FROM vijesti';
+$result= mysqli_query($conn,$upit);
+if (mysqli_num_rows($result)>0){
+while ($row=mysqli_fetch_array($result)){
+	if ($row['id']>3){?>
+							
+							<div class="col align-center">
+									<div class="image round fit">
+										<img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($row['slike']); ?>" width="100" /> 
+									</div>
+								<p><b><?php echo $row['datum'];?></b> <?php echo $row['tekst'];?> </p>
+									
+									<?php if ($row['id']==4){?>
+									<a href="4.php" <?php } ?> 
+									
+									<?php if ($row['id']==5){?>
+									<a href="5.php" <?php } ?> 
+									
+									<?php if ($row['id']==6){?>
+									<a href="6.php" <?php } ?> 
+									
+									<?php if ($row['id']==9){?>
+									<a href="7.php" <?php } ?> 
+									
+									<?php if ($row['id']==10){?>
+									<a href="8.php" <?php } ?> 
+									
+									<?php if ($row['id']==11){?>
+									<a href="9.php" <?php } ?> 
+									
+									<?php if ($row['id']==12){?>
+									<a href="10.php" <?php } ?>
+									
+									class="button">ВИШЕ</a><br><br>
+								
+								</div>
+								
+								
+								
+						
+							
+							
+							
+							<?php
+	}}}
+	else{
+	echo ("Ne postoje podaci u bazi");
+	}
+?>	
