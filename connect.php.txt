@@ -1,0 +1,10 @@
+<?php
+
+$conn = mysqli_connect("localhost","root","","policija");  // database connection
+
+if(!$conn)
+{
+    die("Konekcija neuspješna: " . mysqli_connect_error());
+}
+
+?>
