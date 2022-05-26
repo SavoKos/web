@@ -1,4 +1,4 @@
-									<?php
+<?php
 include "connect.php";
 $upit='SELECT * FROM vijesti';
 $result= mysqli_query($conn,$upit);
